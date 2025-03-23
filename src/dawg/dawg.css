@@ -1,0 +1,348 @@
+
+.underdog-tracker {
+    max-width: 100%;
+    margin: 2rem auto 0;
+    padding: 80px;
+    font-family: 'Inter', sans-serif;
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+h1 {
+    color: #f4a261;
+    text-align: center;
+}
+
+h2 {
+    font-weight: 1000;
+    color: white;
+    text-align: center;
+    border-bottom: 5px solid #444;
+    padding-bottom: 12px;
+    margin-top: 32px;
+}
+
+.settings {
+    background-color: #222;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings label {
+    margin-right: 16px;
+    font-weight: 1000;
+}
+
+.settings input[type="number"] {
+    font-weight: 1000;
+    width: 80px;
+    padding: 6px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 6px;
+}
+
+.stat-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #29293d;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.stat {
+    text-align: center;
+    flex: 1;
+}
+
+.stat h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #bbb;
+}
+
+.stat p {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.profit {
+    color: #4caf50;
+}
+
+.loss {
+    color: #e53935;
+}
+
+.data-info {
+    text-decoration: underline;
+    color: #555
+}
+
+.games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-gap: 24px;
+}
+
+.hide-game-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.hide-game-btn:hover {
+    opacity: 1;
+}
+
+.game-card {
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    padding: 18px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.game-card.completed {
+    border-left: 6px solid #555;
+}
+
+.game-card.win {
+    border-left: 6px solid #4caf50;
+}
+
+.game-card.loss {
+    border-left: 6px solid #e53935;
+}
+
+.team {
+    font-weight: bold;
+    flex: 1;
+}
+
+.team.underdog {
+    color: #ffb74d;
+}
+
+.underdog-odds {
+    color: #ffb74d;
+}
+
+.team.favorite {
+    color: #42a5f5;
+}
+
+.favorite-odds {
+    color: #42a5f5;
+}
+
+.team.winner {
+    color: #4caf50;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.sort-options {
+    padding-left: 17px;
+}
+
+.sort-options select {
+    margin-left: 2px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    border: 1px solid #666;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+.error {
+    background-color: #ff5252;
+    color: #fff;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .stat-card {
+        flex-direction: column;
+    }
+
+    .stat {
+        margin-bottom: 16px;
+    }
+
+    .games-list {
+        grid-template-columns: 1fr;
+    }
+
+    .settings {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .settings label {
+        margin-bottom: 12px;
+    }
+}
+
+@keyframes highlight {
+    0% { background-color: #ffcc80; }
+    100% { background-color: transparent; }
+}
+
+.highlight {
+    animation: highlight 1.5s ease-out;
+}
+
+.strategy-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.strategy-navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.navbar-brand h1 {
+    color: white;
+    margin: 0;
+    font-size: 36px;
+    white-space: nowrap;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(75%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.stats-navbar {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.stats-wrapper {
+    display: flex;
+    gap: 500px;
+    white-space: nowrap;
+    animation: slide-left 20s linear infinite;
+    width: max-content;
+}
+
+.stats-wrapper2 {
+    display: flex;
+    gap: 500px;
+    white-space: nowrap;
+    animation: slide-left 20s linear infinite;
+    animation-delay: 11s;
+    width: max-content;
+}
+
+.stats-navbar .stat2 {
+    font-weight: 1000;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+}
+
+.stats-navbar .stat {
+    font-weight: 1000;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+}
+
+.stats-wrapper:hover {
+    animation-play-state: paused;
+}
+
+.stats-navbar .stat.profit {
+    color: #4caf50;
+}
+
+.stats-navbar .stat.loss {
+    color: #e53935;
+}
+
+.negative-roi {
+    color: #e53935ed;
+}
+
+.positive-roi {
+    color: #4caf50;
+}
+
+
+.data-info {
+    font-size: 12px;
+    color: #777;
+    padding-right: 50px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .strategy-navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .stats-navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .stats-navbar .stat {
+        font-size: 12px;
+    }
+}
