@@ -15,7 +15,7 @@ const UnderdogTracker = () => {
     const [sortMethod, setSortMethod] = useState('time');
     const [filterByTeams, setFilterByTeams] = useState(true);
 
-    const API_KEY = "50b19dfae3eb63a69eae37161636bffc";
+    const API_KEY = process.env.REACT_APP_API_KEY;
     const BASE_URL = "https://api.the-odds-api.com/v4";
 
     const SPORTS_CACHE_KEY = "underdogSportsCache";
